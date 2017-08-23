@@ -1,0 +1,29 @@
+﻿@using Euro_Africa.Models;
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "Manage Account";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br /><br /><br /><br /><br /><br />
+
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="row">
+    <div class="col-md-12">
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        {
+            @Html.Partial("_SetPasswordPartial")
+        }
+
+        <section id="externalLogins">
+            <a href="../../Collaborator/Index" class="btn btn-effect btn-info">Go To Admin Panel</a>
+        </section>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

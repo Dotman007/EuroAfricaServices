@@ -1,0 +1,49 @@
+﻿@model Euro_Africa.Models.Collaborator
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<br />
+
+<br />
+<br />
+
+<br />
+<br />
+
+<br />
+<section id="social" class="parallax">
+    <div class="container" style="color:white">
+        <div class="row">
+
+
+            <fieldset class="table table-striped table- bordered" style="color:white;font-family:Candara">
+                <legend style="text-align:center;color:white">@Html.DisplayFor(model => model.Name)</legend>
+
+                <div class="display-label badge" style="font-size:larger">Name</div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Name)
+                </div>
+
+                @*<div class="display-label">Logo</div>*@
+                <div class="display-field">
+
+                    <img src="@string.Format("/Uploads/{0}",@Model.Logo)" alt="@Model.Logo" class="span12" style="height:500px;width:500px; border:solid"  />
+
+                </div>
+                <br />
+
+                <div class="display-label badge" style="font-size:larger"><strong>Description</strong></div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Description)
+                </div>
+            </fieldset>
+            <p style="text-align:center">
+                <a href="../../Collaborator/ListColl" class="btn btn-blue btn-effect">Back To List</a>
+
+            </p>
+        </div>
+    </div>
+</section>

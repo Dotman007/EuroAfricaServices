@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Euro_Africa.Models.Collaborator>
+
+@{
+    ViewBag.Title = "ListColl";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<br />
+
+<br />
+<br />
+<br />
+
+<section id="social" class="parallax" style="color:white">
+    <div class="container" style="color:white">
+        <div class="row">
+
+            <h2 style="text-align:center;color:white">List of Collaborators</h2>
+
+            <br />
+            <table class="table table-striped table-bordered  table-hover" style="color:white;font-family:Candara">
+                <tr style="">
+                    <th>
+                        Collaborators Name
+                    </th>
+                    <th>
+                        Collaborators Logo
+                    </th>
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="color:red">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            <img src="@string.Format("/Uploads/{0}",@item.Logo)" alt="@item.Logo" class="span12" style="height:200px; width:200px;border:5px" />
+
+                        </td>
+
+                        <td style="font-family:Candara">
+
+                            @Html.ActionLink("View Details", "Details", new { id = item.Collaborator_Id })
+
+                        </td>
+                    </tr>
+
+
+                }
+
+            </table>
+        </div>
+    </div>
+    <div style="text-align:center">
+        <a href="../Home/Index" class="btn btn-blue btn-effect">Go Back Home</a>
+    </div>
+
+
+
+</section>
